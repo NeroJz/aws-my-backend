@@ -9,6 +9,12 @@ const app = Express();
 app.use(json());
 app.use(cors());
 
+app.get('/health', (req: Request, res: Response) => {
+  res.status(200).send({
+    msg: 'App is healthy'
+  });
+});
+
 app.get('/info', (req: Request, res: Response) => {
   res.send({
     data: 'Info return from backend'
